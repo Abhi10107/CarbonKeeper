@@ -24,11 +24,15 @@ export const createApp = (dependencies: AppDependencies = {}) => {
   app.use(helmet());
   app.use(
     cors({
-      origin: env.CLIENT_ORIGIN
+      origin: env.FRONTEND_URL ?? 'http://localhost:5173'
     })
   );
   app.use(express.json({ limit: '100kb' }));
   app.use(apiRateLimit);
+
+  app.get('/health', (_request, response) => {
+    response.status(200).json({ status: 'ok' });
+  });
 
   app.get('/api/health', (_request, response) => {
     response.status(200).json({ ok: true });

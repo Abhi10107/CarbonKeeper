@@ -1,8 +1,8 @@
 import { createApp } from './app';
-import { env } from './config/env';
 
 const app = createApp();
+const port = Number(process.env.PORT ?? 10000);
 
-app.listen(env.PORT, () => {
-  console.log(`CarbonKeeper API listening on port ${env.PORT}`);
+app.listen(port, () => {
+  console.log(`CarbonKeeper API listening on port ${port}`);
 });

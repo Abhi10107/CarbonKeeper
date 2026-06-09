@@ -11,8 +11,8 @@
     "node": ">=24.0.0"
   },
   "scripts": {
-    "dev": "concurrently \"node ./.tools/package/bin/npm-cli.js run dev --workspace @carbonkeeper/api\" \"node ./.tools/package/bin/npm-cli.js run dev --workspace @carbonkeeper/web\"",
-    "build": "node ./.tools/package/bin/npm-cli.js run build --workspace @carbonkeeper/shared && node ./.tools/package/bin/npm-cli.js run build --workspace @carbonkeeper/api && node ./.tools/package/bin/npm-cli.js run build --workspace @carbonkeeper/web",
+    "dev": "concurrently \"npm run dev --workspace @carbonkeeper/api\" \"npm run dev --workspace @carbonkeeper/web\"",
+    "build": "npm run build --workspace @carbonkeeper/shared && npm run build --workspace @carbonkeeper/api && npm run build --workspace @carbonkeeper/web",
     "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "lint": "eslint apps packages --ext .ts,.tsx",

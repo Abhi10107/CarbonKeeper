@@ -1,7 +1,8 @@
 import type { Challenge, DashboardData, InsightsData, ParsedActivity } from '@carbonkeeper/shared';
+import { apiBaseUrl } from './apiConfig';
 
 const request = async <T>(path: string, init?: RequestInit): Promise<T> => {
-  const response = await fetch(path, {
+  const response = await fetch(`${apiBaseUrl}${path}`, {
     headers: {
       'Content-Type': 'application/json'
     },
