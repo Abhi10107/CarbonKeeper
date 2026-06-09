@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color: #10231d;
+    background: #f4f8f6;
+  }
+
+  body {
+    @apply m-0 bg-mist text-ink font-sans antialiased;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-3xl border border-slate-100 bg-white shadow-card;
+  }
+}

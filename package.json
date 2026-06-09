@@ -1,0 +1,56 @@
+{
+  "name": "carbonkeeper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"node ./.tools/package/bin/npm-cli.js run dev --workspace @carbonkeeper/api\" \"node ./.tools/package/bin/npm-cli.js run dev --workspace @carbonkeeper/web\"",
+    "build": "node ./.tools/package/bin/npm-cli.js run build --workspace @carbonkeeper/shared && node ./.tools/package/bin/npm-cli.js run build --workspace @carbonkeeper/api && node ./.tools/package/bin/npm-cli.js run build --workspace @carbonkeeper/web",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "lint": "eslint apps packages --ext .ts,.tsx",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
+    "@vitejs/plugin-react-swc": "^4.0.0",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.0.3",
+    "jest-environment-jsdom": "^30.0.3",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.1",
+    "supertest": "^7.1.1",
+    "tailwindcss": "^3.4.17",
+    "ts-jest": "^29.4.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.0"
+  }
+}

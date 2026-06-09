@@ -1,0 +1,21 @@
+{
+  "name": "@carbonkeeper/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build"
+  },
+  "dependencies": {
+    "@carbonkeeper/shared": "1.0.0",
+    "@tanstack/react-query": "^5.81.5",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.523.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
+    "recharts": "^2.15.3",
+    "tailwind-merge": "^3.3.1"
+  }
+}
